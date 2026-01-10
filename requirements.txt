@@ -1,9 +1,24 @@
 # TH-GFD Dependencies
-# Core
+# 
+# NOTE: PyTorch Geometric 2.4+ includes scatter/sparse operations natively!
+# You no longer need to install torch-scatter and torch-sparse separately.
+#
+# Installation:
+#   pip install torch>=2.0.0
+#   pip install torch-geometric>=2.5.0  # Uses native PyTorch operations
+#   pip install -r requirements.txt
+#
+# Or for older PyG versions that need torch-scatter/torch-sparse:
+#   pip install torch==2.2.0  # Use a version with available PyG wheels
+#   pip install torch-scatter torch-sparse -f https://data.pyg.org/whl/torch-2.2.0+cpu.html
+
+# Core PyTorch
 torch>=2.0.0
-torch-geometric>=2.4.0
-torch-scatter>=2.1.0
-torch-sparse>=0.6.0
+
+# PyTorch Geometric (2.5+ uses native scatter/sparse, no separate packages needed)
+torch-geometric>=2.5.0
+# Note: torch-scatter and torch-sparse are NO LONGER required for PyG 2.4+
+# The operations are now handled natively by PyTorch
 
 # Data processing
 numpy>=1.24.0
